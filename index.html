@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Loan Calculator</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        
+        <style>
+            body {
+                color: #1093b1;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .heading {
+                text-align: center;
+            }
+
+            #loan-form {
+                width: 500px;
+                margin: 0 auto;
+            }
+
+            .form-control {
+                width: 100%;
+                font-size: 1.2rem;
+                margin: 13px 0;
+                border: none;
+                color: inherit;
+                background-color: rgba(230, 232, 235, 0.404);
+                border-radius: 2px;
+                padding: 13px 18px;
+                transition: all 0.3s;
+                border-bottom: 3px solid transparent;
+            }
+
+            .form-control:focus {
+                outline: none;
+                box-shadow: 0 1rem 2rem #00000004;
+                border-bottom: 3px solid #1093b1;
+            }
+
+            .btn-block,
+            .btn-block:link,
+            .btn-block:visited {
+                font-size: 1.1rem;
+                margin-top: 20px;
+                padding: 13px 50px;
+                border-radius: 30px;
+                border: none;
+                background-color: #1093b1;
+                color: #ffffff;
+                cursor: pointer;
+                text-transform: uppercase;
+                outline: none;
+            }
+
+            #loading,
+            #results {
+                text-align: center;
+                display: none;
+            }
+
+            #results {
+                margin: 0 auto;
+                width: 600px;
+            }
+
+            .error {
+                text-align: center;
+                color: red;
+                display: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1 class="heading">Loan Calculator</h1>
+            <div class="error">
+                <p>Please fill all forms</p>
+            </div>
+            <form id="loan-form">
+                <input type="number" class="form-control" id="amount" placeholder="Loan Amount" />
+                <input type="number" class="form-control" id="interest" placeholder="Interest" />
+
+                <input type="number" class="form-control" id="years" placeholder="Years To Repay" />
+                <input type="submit" value="Calculate" class="btn btn-dark btn-block" />
+            </form>
+            <!-- LOADER -->
+            <div id="loading">
+                <img src="img/loading.gif" alt="Loading" />
+            </div>
+
+            <!-- RESULTS -->
+            <div id="results">
+                <h2>Results</h2>
+
+                <span class="">Monthly Payment</span>
+                <input type="number" class="form-control" id="monthly-payment" disabled />
+
+                <span class="">Total Payment</span>
+                <input type="number" class="form-control" id="total-payment" disabled />
+
+                <span class="">Total Interest</span>
+                <input type="number" class="form-control" id="total-interest" disabled />
+            </div>
+        </div>
+
+    
+        <script src="app.js"></script>
+    </body>
+</html>
